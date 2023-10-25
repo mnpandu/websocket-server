@@ -16,7 +16,6 @@ public class NotificationService {
 
     public void sendGlobalNotification() {
         ResponseMessage message = new ResponseMessage("Global Notification");
-        messagingTemplate.convertAndSend("/queue/test", message);
         messagingTemplate.convertAndSend("/topic/global-notifications", message);
     }
 

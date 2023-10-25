@@ -13,9 +13,14 @@ public class WSController {
     @Autowired
     private WSService service;
 
-    @PostMapping("/send-message")
-    public void sendMessage(@RequestBody final Message message) {
-        service.notifyFrontend(message.getMessageContent());
+    @PostMapping("/send-global-message")
+    public void sendGlobalMessage(@RequestBody final Message message) {
+        service.notifyGlobalFrontend(message.getMessageContent());
+    }
+    
+    @PostMapping("/send-user-message")
+    public void sendUserMessage(@RequestBody final Message message) {
+        service.notifyUserFrontend(message.getMessageContent());
     }
 
     @PostMapping("/send-private-message/{id}")
