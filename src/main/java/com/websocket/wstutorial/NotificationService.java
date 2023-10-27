@@ -14,9 +14,9 @@ public class NotificationService {
         this.messagingTemplate = messagingTemplate;
     }
 
-    public void sendGlobalNotification() {
-        ResponseMessage message = new ResponseMessage("Global Notification");
-        messagingTemplate.convertAndSend("/topic/global-notifications", message);
+    public void sendGlobalNotification(String message, String topic) {
+        ResponseMessage responseMessage = new ResponseMessage(message);
+        messagingTemplate.convertAndSend(topic, responseMessage);
     }
 
     public void sendPrivateNotification(final String userId) {

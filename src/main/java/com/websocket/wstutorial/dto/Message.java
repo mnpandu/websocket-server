@@ -2,8 +2,17 @@ package com.websocket.wstutorial.dto;
 
 public class Message {
     private String messageContent;
+    private String topic;
 
-    public String getMessageContent() {
+    public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
+	public String getMessageContent() {
         return messageContent;
     }
 

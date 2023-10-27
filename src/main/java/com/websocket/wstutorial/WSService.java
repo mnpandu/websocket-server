@@ -17,13 +17,13 @@ public class WSService {
         this.notificationService = notificationService;
     }
 
-    public void notifyGlobalFrontend(final String message) {
-        notificationService.sendGlobalNotification();
+    public void notifyGlobalFrontend(final String message, String topic) {
+        notificationService.sendGlobalNotification(message,topic);
     }
     
-    public void notifyUserFrontend(final String message) {
+    public void notifyUserFrontend(final String message, String topic) {
         ResponseMessage response = new ResponseMessage(message);
-        messagingTemplate.convertAndSend("/topic/messages", response);
+        messagingTemplate.convertAndSend(topic, response);
     }
 
     public void notifyUser(final String id, final String message) {

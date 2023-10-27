@@ -15,12 +15,12 @@ public class WSController {
 
     @PostMapping("/send-global-message")
     public void sendGlobalMessage(@RequestBody final Message message) {
-        service.notifyGlobalFrontend(message.getMessageContent());
+        service.notifyGlobalFrontend(message.getMessageContent(),message.getTopic());
     }
     
     @PostMapping("/send-user-message")
     public void sendUserMessage(@RequestBody final Message message) {
-        service.notifyUserFrontend(message.getMessageContent());
+        service.notifyUserFrontend(message.getMessageContent(),message.getTopic());
     }
 
     @PostMapping("/send-private-message/{id}")
