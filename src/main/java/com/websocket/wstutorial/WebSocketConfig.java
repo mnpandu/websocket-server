@@ -17,8 +17,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 			.enableStompBrokerRelay("/topic")
 			.setRelayHost("localhost")
 			.setRelayPort(61613)
-			.setSystemLogin("guestclient")
-			.setSystemPasscode("guestclient");
+			.setSystemLogin("admin")
+			.setSystemPasscode("admin");
 	}
 
     @Override
